@@ -1,0 +1,512 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,enumerate,fullpage,float}
+
+%\usepackage[usenames,dvipsnames,pdf]{pstricks}
+\usepackage{epsfig,microtype}
+\usepackage{hyperref}
+
+\title{General Facts}
+
+\pagestyle{plain}
+\setlength{\parindent}{0cm}
+
+% \usepackage[ngerman]{babel}
+%\usepackage[T1]{fontenc} % Trennung bei Woertern mit Umlauten
+\usepackage{amsthm,cite}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{comment,microtype}
+\usepackage{stmaryrd,faktor}
+
+%\usepackage{pst-all}
+
+%\usepackage{tikz-cd} % for commutative diagrams, but didn't work here
+\usepackage{amscd} % for (very simple) commutative diagrams
+\usepackage[all]{xy}
+
+%\hyphenation{mani-fold}
+%\hyphenation{sub-mani-fold}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+%\newcommand{\K}{\mathbb{K}}
+\newcommand{\PP}{\mathbb{P}}
+%\newcommand{\CP}{\mathbb{CP}}
+%\newcommand{\RP}{\mathbb{RP}}
+\newcommand {\kk} {\Bbbk}
+\newcommand{\VV}{\mathbb V}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+\newcommand{\mfd}{\mathfrak d}
+\newcommand{\mfD}{\mathfrak D}
+\newcommand{\mfc}{\mathfrak c}
+\newcommand{\mfU}{\mathfrak U}
+\newcommand{\mfu}{\mathfrak u}
+\newcommand{\mfB}{\mathfrak B}
+\newcommand{\mft}{\mathfrak t}
+\newcommand{\mfm}{\mathfrak m}
+\newcommand{\mfb}{\mathfrak b}
+\newcommand{\mfj}{\mathfrak j}
+\newcommand{\mfv}{\mathfrak v}
+\newcommand{\mfM}{\mathfrak M}
+\newcommand{\mfX}{\mathfrak X}
+\newcommand{\mfR}{\mathfrak R}
+\newcommand{\mfT}{\mathfrak T}
+
+\newcommand{\mcM}{\mathcal M}
+\newcommand{\mcC}{\mathcal C}
+\newcommand{\mcN}{\mathcal N}
+\newcommand{\mcX}{\mathcal X}
+\newcommand{\mcR}{\mathcal R}
+\newcommand{\mcO}{\mathcal O}
+\newcommand{\mcA}{\mathcal A}
+\newcommand{\mcF}{\mathcal F}
+\newcommand{\mcE}{\mathcal E}
+\newcommand{\mcU}{\mathcal U}
+\newcommand{\mcJ}{\mathcal J}
+\newcommand{\mcT}{\mathcal T}
+\newcommand{\mcD}{\mathcal D}
+\newcommand{\mcL}{\mathcal L}
+\newcommand{\mcG}{\mathcal G}
+
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\dvol}{\mathrm{vol}_{\Sigma}}
+\newcommand{\ddd}{{(d,d')}}
+\newcommand{\ddv}{{2d+2d'-\nu}}
+\newcommand{\ddvm}{{-2d-2d'-\nu}}
+\newcommand{\PtP}{{\PP^1 \times \PP^1}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\si}{\Sigma}
+\newcommand{\del}{\partial}
+\newcommand{\db}{\overline{\partial}}
+\newcommand{\cin}{C^{\infty}}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\ddt}{\frac{\dd}{\dd t}_{|_{t=0}}}
+
+
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Mult}{\operatorname{Mult}}
+\newcommand{\Mono}{\operatorname{Mono}}
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\Init}{\operatorname{Init}}
+\newcommand{\Supp}{\operatorname{Supp}}
+\newcommand{\Sing}{\operatorname{Sing}}
+\newcommand{\Trees}{\operatorname{Trees}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Spf}{\operatorname{Spf}}
+\newcommand{\Val}{\operatorname{Val}}
+\newcommand{\Int}{\operatorname{Int}}
+\newcommand{\Asym}{\operatorname{Asym}}
+\newcommand{\Interstices}{\operatorname{Interstices}}
+\newcommand{\Joints}{\operatorname{Joints}}
+\newcommand{\Opp}{\operatorname{Opp}}
+\newcommand{\dlog}{\operatorname{dlog}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Log}{\operatorname{Log}}
+\newcommand{\ts}{\mathrm{T}}
+\newcommand{\ind}{\operatorname{index}}
+%\newcommand{\dim}{\operatorname{dim}}
+%\newcommand{\ker}{\operatorname{ker}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\End}{\operatorname{End}}
+%\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\image}{\operatorname{Im}}
+\newcommand{\grapho}{\operatorname{graph}}
+\newcommand{\Trace}{\operatorname{Tr}}
+\newcommand{\ver}{\operatorname{ver}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\diff}{\operatorname{Diff}}
+\newcommand{\arc}{\operatorname{arc}}
+\newcommand{\Ham}{\operatorname{Ham}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+
+\newcommand{\out}{\mathrm{out}}
+\newcommand{\disk}{\mathrm{disk}}
+\newcommand{\pt}{\mathrm{pt}}
+\newcommand{\trop}{\mathrm{trop}}
+\newcommand{\prim}{\mathrm{prim}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\GL}{\mathrm{GL}}
+
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}{Proposition}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{conjecture}{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{rmk}{Remark}
+
+\theoremstyle{remark}
+\newtheorem{choice}{Choice}
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\maketitle 
+
+\tableofcontents
+
+\section{Algebra}
+
+\begin{definition}[Novikov Ring]
+  The Novikov ring over a base field $\KK$ is defined by
+  \begin{equation*}
+    \Lambda_0:=\left\{\sum_{i=0}^{\infty}a_iT^{\lambda_i}\middle|a_i\in\KK,\lambda_i\in\RR_{\geq 0},\lim_{i\to\infty}\lambda_i=+\infty\right\}.
+  \end{equation*}
+  The Novikov field is the field of fractions of $\Lambda_o$, i.e.\ 
+  \begin{equation*}
+    \Lambda:=\left\{\sum_{i=0}^{\infty}a_iT^{\lambda_i}\middle|a_i\in\KK,\lambda_i\in\RR,\lim_{i\to\infty}\lambda_i=+\infty\right\}.
+  \end{equation*}
+\end{definition}
+
+\section{Analysis}
+
+\subsection{Basics}
+
+\begin{definition}[Equicontinuos Family]
+  Let $X$ be a compact Hausdorff space and $C(X)$ denote the space of real-valued continous funtions on $X$. A subset $F\subset C(X)$ is called \emph{equicontinous} if for every $x\in X$ and every $\epsilon>0$ there exists a neighborhood $U$ of $x$ such that for all $y\in U$ and all $f\in F$ we have $|f(y)-f(x)|<\epsilon$.
+\end{definition}
+
+\begin{definition}[Pointwise Bounded Family]
+  A set $F\subset C(X)$ of continous real-valued functions on some compact Hausdorff space $X$ is \emph{pointwise bounded} if for every $x\in X$ we have $\sup\{|f(x)|:f\in F\}<\infty$.
+\end{definition}
+
+\begin{thm}[Arz\'ela--Ascoli]
+  Let $X$ be a compact Hausdorff space. Then $F\subset C(X)$ is relatively compact in the topology induced by uniform norm if and only if it is equicontinous and pointwise bounded.
+\end{thm}
+
+\begin{cor}
+  Consider a sequence of real-valued continous functions $\{f_n\}_{n\in\NN}$ defined on a closed and bounded interval $[a,b]$ of the real line. There exists a subsequence of $\{f_n\}$ which converges uniformly if and only if this sequence is uniformly bounded and equicontinous.
+\end{cor}
+
+\subsection{Functional Analysis}
+
+\begin{thm}[Open Mapping Theorem]
+  Let $X$ and $Y$ be Banach (or Fr\'echet) spaces and $A:X\lra Y$ a surjective continous linear operator. Then $A$ is an open map.
+\end{thm}
+
+\begin{thm}[Bounded Inverse Theorem]
+  If $A:X\lra Y$ is a bijective continous linear operator between the Banach spaces $X$ and $Y$, then the inverse operator $A^{-1}:Y\lra X$ is continous as well.
+\end{thm}
+
+\begin{thm}[Closed Graph Theorem]
+   If $A:X\lra Y$ is a linear operator between the Banach spaces $X$ and $Y$, and if for every sequence $(x_n)$ in $X$ with $x_n\lra 0$ and $Ax_n\lra 0$ it follows that $y=0$, then $A$ is continous.
+\end{thm}
+
+\begin{definition}[Fr\'echet Space]
+  A topological vector space $X$ is called a \emph{Fr\'echet} space if and only if it satisfies one of the following equivalent triples of conditions:
+  \begin{enumerate}
+    \item $X$ is locally convex, its topology can be induced by a translation invariant metric and it is a complete metric space.
+    \item $X$ is a Hausdorff space, its topology may be induced by a countable family of semi-norms and it is complete with respect to the family of semi-norms.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}[Baire Space]
+  A \emph{Baire space} is a topological space with the property that for each countable collection of open dense sets their intersection is also dense.
+\end{definition}
+
+\begin{thm}[Baire Category Theorem]
+  \begin{enumerate}
+    \item Every complete metric space is Baire.
+    \item Every locally compact Hausdorff space is Baire.
+    \item A non-empty complete metric space is not the countable union of nowhere-dense closed sets.
+  \end{enumerate}
+\end{thm}
+
+\subsection{Fixed Point Theorems}
+
+\begin{thm}[Brouwer Fixed Point Theorem]
+  Every continous function from a convex compact subset $K$ of a Euclidean space to $K$ itself has a fixed point.
+\end{thm}
+
+\begin{thm}[Schauder Fixed Point Theorem]
+  Every continous function from a convex compact subest $K$ of a Banach space to $K$ itself has a fixed point.
+\end{thm}
+
+\begin{definition}[Contraction Mapping]
+  Let $(X,d)$ be a metric space. Then a map $T:X\lra X$ is called a contraction mapping on $X$ if there exists a $q\in[0,1]$ such that $d(T(x),T(y))\leq qd(x,y)$ for all $x,y\in X$.
+\end{definition}
+
+\begin{thm}[Banach Fixed Point Theorem]
+  Let $(X,d)$ be an non-empty complete metric space with a contraction mapping $T:X\lra X$. Then $T$ admits a unique fixed-point $x^*\in X$. Furthermore, $x^*$ can be found as follows: start with an arbitrary element $x_0\in X$ and define a sequence $\{x_n\}$ by $x_{n+1}=T(x_{n-1})$, then $x_n\lra x^*$.
+\end{thm}
+
+\begin{definition}[Lefschetz Number]
+  Let $f:X\lra X$ be a continous map from a compact triangulizable space $X$ to itself. Define the \emph{Lefschetz number} $\Lambda_f$ by
+  \begin{equation*}
+    \Lambda_f:=\sum_{k\geq k}(-1)^k\Trace(f_*|_{H_k(X,\QQ)})
+  \end{equation*}
+\end{definition}
+
+\begin{thm}[Lefschetz Fixed Point Theorem]
+  If $\Lambda_f\neq 0$ then $f$ has at least one fixed point. Furthermore, if you denote by $i(f,x)$ the index of the fixed point $x$ and if $f$ has only finitely many fixed points, then
+  \begin{equation*}
+    \sum_{x\in\text{Fix}(f)}i(f,x)=\Lambda_f.
+  \end{equation*}
+\end{thm}
+
+\section{Algebraic Topology}
+
+\section{Differential Topology}
+
+\begin{definition}[Ruled $4$-Manifold]
+  A manifold $M$ of dimension $4$ is called \emph{ruled} if it is a $S^2$-bundle over a closed Riemann surface.
+\end{definition}
+
+\begin{definition}[Fibered Knot]
+  A knot $K\subset S^3$ is called \emph{fibered} if there exists a $S^1$-family $F_t$ with $t\in S^1$ of Seifert surfaces for $K$ such that $F_s\cap F_t=K$ for all $s\neq t$.
+\end{definition}
+
+\begin{prop}
+  A knot is fibered if and only if it is the binding of some open book decomposition of $S^3$.
+\end{prop}
+
+\begin{definition}[Heegard Splittings and Diagrams]
+  
+\end{definition}
+
+\section{Riemannian Geometry}
+
+\subsection{Hypersurfaces}
+
+\begin{definition}[Shape operator or Weingarten map]
+  Let $S\subset\RR^n$ be a smooth hypersurface in Euclidean $n$-space. Then the \emph{shape operator} or \emph{Weingarten map} $S_p$ is defined by
+  \begin{equation*}
+    \langle S_p(v),w\rangle=\langle \dd\nu(v),w\rangle
+  \end{equation*}
+  for all $v,w\in\ts_pS$, where $\nu:S\lra S^{n-1}$ is the Gauss map, i.e.\ it is given by $\nu(p)=N_p$, where $N_p$ is a normal vector to $S$ at $p$.
+\end{definition}
+
+\subsection{Hyperbolic Geometry}
+
+\begin{definition}[Geodesic lamination]
+  A \emph{geodesic lamination} on a complete hyperbolic surface $S$ is a closed subset of $S$ foliated by complete simple geodesics.  
+\end{definition}
+
+\begin{definition}[Transversal measures on laminations]
+  A \emph{transversal measure} on a lamination $\lambda$ is a measure on the collection of arcs on $S$ transversal to $\lambda$ which  is invariant under isotopies of $S$ preserving $\lambda$. A \emph{measured lamination} is a pair of a lamination and a transversal measure.
+\end{definition}
+
+\begin{rmk}
+  Let $\wt{S}_{\infty}$ be the boundary at infinity of $\HH^2$. Then $\mcG\mcL(S)$ denotes the subset of closed subsets of $\faktor{\wt{S}_{\infty}\times \wt{S}_{\infty}}{\sim}$ parametrizing geodesics (and thus laminations) with the Hausdorff topology. It is compact. A geodesic lamination is called \emph{minimal} if every leaf is dense. See \cite{Brock2014}.
+\end{rmk}
+\section{Riemann Surfaces}
+
+\section{Fibre Bundles}
+
+\subsection{Definitions}
+
+\subsection{Existence}
+
+
+\begin{lem}[Ehresmann's lemma]
+  Let $M$ and $N$ be smooth manifolds and $f:M\lra N$ a smooth map. If $f$ is a proper surjective submersion then $f$ is a locally trivial fibration.
+\end{lem}
+
+\section{Symplectic Geometry}
+
+\subsection{Basics}
+
+\begin{definition}[Hamiltonian Diffeomorphism]
+  A Hamiltonian diffeomorphism $\Psi\in\operatorname{Ham}(M,\omega)$ of a symplectic manifold is a time-one map of a time-dependent Hamiltonian flow.
+\end{definition}
+
+\subsection{Examples}
+
+\subsection{Lagrangian Submanifolds}
+
+\begin{definition}[Properties of Lagrangians]
+Let $L\subset (M,\omega)$ be a Lagrangian submanifold. We call $L$
+\begin{itemize}
+  \item monotone, if there exists a $\tau>0$ such that $\omega=\tau\mu$, where $\omega:\pi_2(M,L)\lra\RR$ is the symplectic form as a map on $\pi_2(M,L)$ and $\mu:\pi_2(M,L)\lra\ZZ$ is the Maslov index,
+  \item exact, if $\omega=\dd\lambda$ is exact and if $[\lambda|_L]=0\in H^1(L)$,
+  \item displacable, if there exists $\Psi\in\operatorname{Ham}(M,\omega)$ such that $\Psi(L)\cap L=\emptyset$.
+\end{itemize}
+  
+\end{definition}
+
+\begin{definition}[Lagrangian Cobordism]
+  Let $(M,\omega)$ be a symplectic manifold, denote by $\pi:\RR^2\times M\lra\RR^2$ the projection and equip $\RR^2$ with the standard symplectic structure. A \emph{Lagrangian cobordism} $V:(L_j')\leadsto(L_i)$ between two families of closed Lagrangian submanifolds $(L_i)_{1\leq i\leq k_-}$ and $(L_j')_{1\leq j\leq k_+}$  is a Lagrangian embedding $V\subset [0,1]\times\RR\times M$ such that for some $\epsilon>0$ we have
+  \begin{align*}
+    V\cap\pi^{-1}([0,\epsilon)\times \RR)&=\coprod_i([0,\epsilon)\times\{i\})\times L_i \\
+    V\cap\pi^{-1}([1-\epsilon,1)\times \RR)&=\coprod_j([1-\epsilon,1)\times\{j\})\times L_j'
+  \end{align*}
+\end{definition}
+
+\begin{definition}[Fukaya Category]
+  Let $(M,\omega)$ be a symplectic manifold with $2c_1(\ts M)=0$. The objects of the compact Fukaya category $\mcF(M,\omega)$ are compact, closed, oriented, spin Lagrangian submanifolds $L\subset M$ such that $[\omega]|_{\pi_2(M,L)}=0$ and vanishing Maslov class $\mu_L=0\in H^1(L,\ZZ)$ together with the choice of a spin structure and a graded lift of $L$.
+
+For every pair of objects $(L,L')$ we choose perturbation data $H_{L,L'}\in\cin([0,1]\times M,\RR)$ and $J_{L,L'}\in\cin([0,1],\mcJ(M,\omega))$ and for all tuples of objects $(L_0,\ldots,L_k)$ and all moduli spaces of discs we choose consistent perturbation data $(H,J)$ compatible with the choices made for the pairs of objects $(L_i,L_j)$ such that we have transversality for alle moduli spaces of perturbed $J$-holomorphic discs.
+
+We set $\hom(L,L'):=CF(L,L';H_{L,L'},J_{L,L'})$ and the differential $\mu^1$ and composition $\mu^2$ and higher operations $\mu^k$ are given by counts of perturbed $J$-holomorphic discs with boundary on the $k$ arguments. This makes $\mcF(M,\omega)$ a $\Lambda$-linear, $\ZZ$-graded, non-unital (but cohomologically unital) $A_{\infty}$-category.
+\end{definition}
+
+\begin{definition}[Lagrangian Suspension Construction]
+  
+\end{definition}
+
+\begin{definition}[Lagrangian Surgery]
+  
+\end{definition}
+
+\begin{definition}[Symplectic Folding]
+  
+\end{definition}
+
+\subsection{Various Topics}
+
+\begin{definition}[Symplectic and Stein Cobordism, \cite{Etnyre2002}]
+  A contact $3$-manifold $(M_1,\xi_1)$ is \emph{symplectically} (resp.\ \emph{Stein}) cobordant to $(M_2,\xi_2)$ if there exists a symplectic (resp.\ Stein) $4$-manifold $(X,\omega)$ with $\del X=M_2-M_1$ and a vector field $V$ defined on a neighborhood of $M_1\cup M_2\subset X$ for which $\mcL_V\omega=\omega, V\pitchfork M_1\cup M_2$ and the normal orientation of $M_1\cup M_2$ agrees with $V$.
+\end{definition}
+
+\begin{rmk}
+Symplectic and Stein cobordisms are not a symmetric relation, see \cite{Etnyre2002}.
+\end{rmk}
+
+\begin{definition}[Weinstein manifold]
+A \emph{Weinstein manifold} is a tuple $(V,\omega,X,\phi)$, where $(V,\omega)$ is a symplectic manifold , $\phi:V\lra\RR$ is an exhausting Morse funtion and $X$ is a complete Liouville vector field which is gradient-like for $\phi$.
+\end{definition}
+
+\begin{rmk}
+  A function $\phi:V\lra\RR$ is called \emph{exhausting} if it is proper and bounded from below.
+\end{rmk}
+
+\begin{definition}[Stein manifold]
+  The following statements are equivalent for a non-compact complex manifold $(V,J)$:
+  \begin{enumerate}
+    \item $(V,J)$ admits a proper holomorphic embedding into some $\CC^N$
+    \item $V$ admits an exhausting $J$-convex function $\phi:V\lra\RR$
+    \item $V$ is holomorphically convex, $\forall x\in V\exists f_1,\ldots,f_n:V\lra\CC$ holomorphic such that they form a holomorphic coordinate system at $x$ and $\forall x\neq y\in V\exists f:V\lra\CC$ holomorphic s.t.\ $f(x)\neq f(y)$.
+  \end{enumerate}
+  Any complex manifold satisfying one (and thus all) of the above is called a \emph{Stein manifold}.
+\end{definition}
+
+\begin{definition}[Liouville Domain]
+  Let $(M,\theta)$ be a compact manifold with boundarz and $\theta\in\Omega^1(M)$ with $\dd\theta$ symplectic and $\theta=r\alpha$ close to the boundary, where we identify a neighborhood of the boundary with $[1-\epsilon,1]\times\del M$, $r$ is the coordinate in the first factor and $\alpha$ is a contact form on the boundary. Such a $(M\theta)$ is called a \emph{Liouville domain}.
+\end{definition}
+
+\begin{definition}[Open Book Decomposition]
+  An open book $(K,\theta)$ of a manifold $V^{2n+1}$ consists of a submanifold $K\subset V$ of codimension $2$ with trivial normal bundle and a fibration $\theta:V\setminus K\lra S^1$ which on a neighborhood $K\times D^2$ of $K\times\{0\}$ is given by the angle coordinate on $D^2$.
+\end{definition}
+
+\begin{definition}
+  A contact structure $\xi$ on a manifold $V^{2n+1}$ is \emph{supported} by an open book $(K,\theta)$ if there exists a contact form such that $\xi=\ker\alpha$ and if
+  \begin{enumerate}
+    \item $\alpha$ induces a contact form on $K$,
+    \item $\dd\alpha$ induces a symplectic form on each fibre $F$ of $\theta$ and
+    \item orientation of $K$ induced by $\alpha$ equals the orientation of $K$ as the boundary of $(F,\dd\alpha)$.
+  \end{enumerate}
+\end{definition}
+
+\begin{rmk}
+  $K$ is called the \emph{binding},  $\ol{F}^V$ is called the \emph{page}.
+\end{rmk}
+
+\begin{thm}[Giroux]
+  Every contact manifold is supported by by an open book whose fibres are Weinstein.
+\end{thm}
+
+\begin{thm}[Giroux Correspondence]
+  If $M$ is a closed oriented $3$-manifold there is a one-to-one correspondence between 
+  \begin{gather*}
+    \{\text{oriented contact structures on $M$ up to isotopy}\} \\
+    \text{and} \\
+    \{\text{open book decompositions of $M$ up to positive stabilization}\}.
+  \end{gather*}
+\end{thm}
+
+\begin{definition}[Positive Stabilization]
+  
+\end{definition}
+
+\begin{definition}[Lefschetz Fibration]
+  Let $(V,\omega)$ be a symplectic manifold. A topological Lefschetz fibration is a tuple $(A,\{x_{\alpha}\},f)$, where $A\subset V$ is a codimension-2 symplectic submanifold, $x_{\alpha}\in V\setminus A$ are finitely many points in $V$ and $f:V\setminus A\lra S^2$ is a submersion on $V\setminus(A\cup\{x_{\alpha}\}$ and $f(x_{\alpha})\neq f(x_{\beta})$ for all $\alpha\neq\beta$ which satisfy the following:
+  \begin{enumerate}
+    \item at each $a\in A$ there exist local compatible complex coordinates $z_i$ such that $A$ is locally defined by $z_1=z_2=0$ and $f$ is given locally by $(z_1,\ldots,z_n)\longmapsto\frac{z_1}{z_2}\in\CC P^1\cong S^2$ and
+    \item at a point $x_{\alpha}$ there exist local compatible complex coordinates $z_i$ such that $f$ is given locally by $(z_1,\ldots,z_n)\longmapsto f(x_{\alpha})+z_1^2+\cdots+z_n^2$.
+  \end{enumerate}
+\end{definition}
+
+\begin{rmk}
+  A system of local complex coordinates $(z_1,\ldots,z_n)$ on a compact symplectic manifold of dimension $2n$ is called compatible if $\omega$ is in those coordinates a positive form of type $(1,1)$ at the origin.
+\end{rmk}
+
+\begin{thm}[Lefschetz]
+  Suppose $(V,\omega)$ is a compact symplectic manifold such that $[\omega]\in H^2(V;\ZZ)$. For a sufficiently large integer $k\in\NN$ there is a topological Lefschetz pencil on $V$ whose fibres are symplectic (outside the singularities) and homologous to $k$ times the Poincar\'e dual of $[\omega]$.
+\end{thm}
+
+\begin{thm}[Lefschetz Hyperplane Theorem]
+  \begin{enumerate}
+    \item If $M\subset\CC^N$ is a non-singular affine algebraic variety with real dimension $2k$ then $H_i(M;\ZZ)\cong 0$ for $i>k$.
+    \item
+  \end{enumerate}
+\end{thm}
+
+\begin{definition}[Symplectically Aspherical]
+  A symplectic manifold $(M,\omega)$ is called \emph{symplectically aspherical} if for any smooth map $f:S^2\lra M$ one has $\int_{S^2}f^*M=0$ or equivalently $\omega|_{\pi_2(M)}=0$ or $[\omega]|_{\operatorname{im}(\text{hur}_2)}=0$, where $\text{hur}_2$ denotes the Hurewicz homomorphism $\pi_2(M)\lra H_2(M)$.
+\end{definition}
+
+\subsection{Conjectures}
+
+\begin{conjecture}[Conley's Conjecture]
+  A Hamiltonian diffeomorphism of a suitable (e.g.\ surface, torus, closed symplectically aspherical or cotangent bundle) symplectic manifold has infinitely many simple periodic points.
+\end{conjecture}
+
+\begin{conjecture}[Weinstein Conjecture]
+  If $M$ is a closed oriented odd-dimensional manifold with a contact form $\lambda$ then the associated Reeb vector field has a closed orbit.
+\end{conjecture}
+
+\begin{conjecture}[Arnold Conjecture]
+  A Hamiltonian diffeomorphism on a symplectic manifold $M$ has at least as many fixed points as the minimal number of critical points of a Morse function on $M$.
+\end{conjecture}
+
+\subsection{Dynamics}
+
+\begin{definition}[Types of Orbits]
+A periodic orbit $\gamma:S^1\lra M$ of a flow $\phi_t$ is called
+\begin{itemize}
+  \item nondegenerate, if the linearized flow after one period on a transversal space $\Psi:V\lra V$ (with $V\subset \ts_p M$ such that $V\pitchfork \RR\ddt\phi_t(p)$) has no eigenvalue equal to $1$, or equivalently $\det(\Psi-\id)\neq 0$,
+  \item elliptic, if every eigenvalue of $\Psi$ is in the unit circle,
+  \item hyperbolic, if every eigenvalue of $\Psi$ has norm diferrent from $1$,
+  \item (un-)stable, if every eigenvalue of $\Psi$ has norm (bigger) smaller than $1$.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Hofer's Metric]
+  Let $(m,\omega)$ be a connected symplectic manifold without boundary. Denote by $\Ham^c(M,\omega)$ all Hamiltonian diffeomorphisms with compact support. Given a path $\{\phi_t\}_{0\leq t\leq 1}\subset\Ham^c(M,\omega)$ and a family of Hamiltonian functions $\{H_t\}$ generating this flow we define
+  \begin{equation*}
+    \mcL(\{\phi_t\}):=\int_0^1\left(\sup_{z\in M}H_t(z)-\inf_{z\in M} H_t(z)\right)\dd t.
+  \end{equation*}
+  Define the \emph{Hofer metric} on $\Ham^c(M,\omega)$ by
+  \begin{equation*}
+    \rho(\phi,\psi):=\inf_{\substack{\{\phi_t\}\subset\Ham^c(M,\omega)\\ \phi_0=\phi, \phi_1=\psi}}\mcL(\{\phi_t\}).
+  \end{equation*}
+\end{definition}
+
+
+
+\bibliography{promotion}{}
+\bibliographystyle{plain}
+
+\end{document}
