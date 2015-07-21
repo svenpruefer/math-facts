@@ -159,6 +159,9 @@
 \theoremstyle{remark}
 \newtheorem{choice}{Choice}
 
+\theoremstyle{remark}
+\newtheorem{ex}{Example}
+
 \everymath{\displaystyle}
 
 \begin{document}
@@ -202,6 +205,14 @@
 
 \subsection{Functional Analysis}
 
+\begin{definition}[Weak Topologies]
+  Let $X$ be a topological vector space. Then the \emph{weak} topology on $X$ is defined by $x_n\lra x$ if and only if $\phi(x_n)\lra\phi(x)\;\forall\phi\in X^*$, where $X^*$ is the topological dual of $X$, i.e.\ the space of all continuous linear functionals on $X$. The \emph{weak-$\star$ topology} on $X^*$ is defined by $\phi_n\lra\phi$ if and only if $\phi_n(x)\lra\phi(x)\;\forall x\in X$.
+\end{definition}
+
+\begin{rmk}
+  The weak-$\star$ topology on $X^*$ is weaker than the weak topology on $X^*$, because in general $X\lra X^{**}$ is an injective linear map and the weak-$\star$ topology is defined as the coarsest topology such that the image of $X$ in $X^{**}$ still consists of continuous maps $X^*\lra\RR$.
+\end{rmk}
+
 \begin{thm}[Open Mapping Theorem]
   Let $X$ and $Y$ be Banach (or Fr\'echet) spaces and $A:X\lra Y$ a surjective continous linear operator. Then $A$ is an open map.
 \end{thm}
@@ -233,6 +244,14 @@
     \item A non-empty complete metric space is not the countable union of nowhere-dense closed sets.
   \end{enumerate}
 \end{thm}
+
+\begin{definition}[Comeagre or Residual Set]
+  
+\end{definition}
+
+\begin{definition}[Compact Operator]
+  
+\end{definition}
 
 \subsection{Fixed Point Theorems}
 
@@ -266,7 +285,41 @@
   \end{equation*}
 \end{thm}
 
+\subsection{Fredholm Theory}
+
+\begin{definition}[Fredholm Operator]
+  
+\end{definition}
+
+\begin{prop}[Properties of Fredholm Operators]
+  
+\end{prop}
+
+\begin{thm}[Elliptic Regularity]
+  
+\end{thm}
+
+\subsection{Sobolev Spaces}
+
+\begin{definition}[Sobolev Spaces]
+  
+\end{definition}
+
+\begin{thm}[Sobolev Embedding Theorems]
+  
+\end{thm}
+
+\section{Topology}
+
+\begin{rmk}
+  A topology $\tau_1$ is called weaker or coarser than $\tau_2$ if $\tau_1$ contains less open sets than $\tau_2$. If $\tau_2\subset\tau_1$ then $\tau_1$ is called stronger or finer. This means that if a sequence converges in one topology then it also converges in every weaker topology as there are less open sets to test the condition on.
+\end{rmk}
+
 \section{Algebraic Topology}
+
+\begin{thm}[Alexander Duality]
+  
+\end{thm}
 
 \section{Differential Topology}
 
@@ -341,9 +394,9 @@ Let $L\subset (M,\omega)$ be a Lagrangian submanifold. We call $L$
 \begin{itemize}
   \item monotone, if there exists a $\tau>0$ such that $\omega=\tau\mu$, where $\omega:\pi_2(M,L)\lra\RR$ is the symplectic form as a map on $\pi_2(M,L)$ and $\mu:\pi_2(M,L)\lra\ZZ$ is the Maslov index,
   \item exact, if $\omega=\dd\lambda$ is exact and if $[\lambda|_L]=0\in H^1(L)$,
-  \item displacable, if there exists $\Psi\in\operatorname{Ham}(M,\omega)$ such that $\Psi(L)\cap L=\emptyset$.
+  \item displacable, if there exists $\Psi\in\operatorname{Ham}(M,\omega)$ such that $\Psi(L)\cap L=\emptyset$,
+  \item semi-monotone, if .
 \end{itemize}
-  
 \end{definition}
 
 \begin{definition}[Lagrangian Cobordism]
@@ -373,6 +426,14 @@ We set $\hom(L,L'):=CF(L,L';H_{L,L'},J_{L,L'})$ and the differential $\mu^1$ and
 \begin{definition}[Symplectic Folding]
   
 \end{definition}
+
+\begin{definition}[Lagrangian Correspondence]
+  
+\end{definition}
+
+\begin{ex}[Lagrangian Correspondences]
+  
+\end{ex}
 
 \subsection{Various Topics}
 
@@ -452,6 +513,10 @@ A \emph{Weinstein manifold} is a tuple $(V,\omega,X,\phi)$, where $(V,\omega)$ i
   A system of local complex coordinates $(z_1,\ldots,z_n)$ on a compact symplectic manifold of dimension $2n$ is called compatible if $\omega$ is in those coordinates a positive form of type $(1,1)$ at the origin.
 \end{rmk}
 
+\begin{definition}[Thimbles or Vanishing Spheres]
+  
+\end{definition}
+
 \begin{thm}[Lefschetz]
   Suppose $(V,\omega)$ is a compact symplectic manifold such that $[\omega]\in H^2(V;\ZZ)$. For a sufficiently large integer $k\in\NN$ there is a topological Lefschetz pencil on $V$ whose fibres are symplectic (outside the singularities) and homologous to $k$ times the Poincar\'e dual of $[\omega]$.
 \end{thm}
@@ -467,6 +532,63 @@ A \emph{Weinstein manifold} is a tuple $(V,\omega,X,\phi)$, where $(V,\omega)$ i
   A symplectic manifold $(M,\omega)$ is called \emph{symplectically aspherical} if for any smooth map $f:S^2\lra M$ one has $\int_{S^2}f^*M=0$ or equivalently $\omega|_{\pi_2(M)}=0$ or $[\omega]|_{\operatorname{im}(\text{hur}_2)}=0$, where $\text{hur}_2$ denotes the Hurewicz homomorphism $\pi_2(M)\lra H_2(M)$.
 \end{definition}
 
+\begin{definition}[Stable Hamiltonian Structure]
+  
+\end{definition}
+
+\begin{rmk}
+  Relations of stable Hamiltonian structures to other things
+\end{rmk}
+
+\begin{definition}[Dehn Twist]
+  
+\end{definition}
+
+\begin{definition}[Asymptotic Operators]
+  
+\end{definition}
+
+\subsection{$J$-holomoprhic Curves}
+
+\begin{definition}[Properties of $J$-holomorphic Curves]
+A $J$-holomorphic curve $u:\si\lra X$ is called
+  \begin{enumerate}[(i)]
+    \item \emph{simple}
+    \item \emph{somewhere injective}
+    \item \emph{multiply covered}
+  \end{enumerate}
+\end{definition}
+
+\begin{rmk}
+  Relation between properties.
+\end{rmk}
+
+\begin{thm}[Micaleff--White]
+  
+\end{thm}
+
+\begin{ex}[Lantern Example]
+  
+\end{ex}
+
+\begin{thm}[Automatic Transversality]
+  
+\end{thm}
+
+\subsection{Compactness Results}
+
+\begin{thm}[Compactness of Morse Gradient Flow Lines]
+  
+\end{thm}
+
+\begin{thm}[Gromov Compactness]
+  
+\end{thm}
+
+\begin{thm}[SFT Compactness]
+  
+\end{thm}
+
 \subsection{Conjectures}
 
 \begin{conjecture}[Conley's Conjecture]
@@ -479,6 +601,10 @@ A \emph{Weinstein manifold} is a tuple $(V,\omega,X,\phi)$, where $(V,\omega)$ i
 
 \begin{conjecture}[Arnold Conjecture]
   A Hamiltonian diffeomorphism on a symplectic manifold $M$ has at least as many fixed points as the minimal number of critical points of a Morse function on $M$.
+\end{conjecture}
+
+\begin{conjecture}[Arnold--Givental Conjecture]
+  
 \end{conjecture}
 
 \subsection{Dynamics}
@@ -504,7 +630,63 @@ A periodic orbit $\gamma:S^1\lra M$ of a flow $\phi_t$ is called
   \end{equation*}
 \end{definition}
 
+\begin{definition}[Bad Orbits]
+  
+\end{definition}
 
+\begin{definition}[Conley--Zehnder Index]
+  
+\end{definition}
+
+\begin{prop}[Properties of Conley--Zehnder Index]
+  
+\end{prop}
+
+\subsection{Contact Geometry}
+
+\begin{definition}[Contact Embedding]
+  
+\end{definition}
+
+\begin{definition}[Symplectic and Stein Fillings]
+  
+\end{definition}
+
+\subsection{Theorems}
+
+\begin{thm}[Floer--McDuff--Eliashberg]
+  
+\end{thm}
+
+\subsection{Homology Theories}
+
+\subsubsection{Quantum Homology}
+
+\subsubsection{Contact Homology}
+
+\subsubsection{Cylindrical Contact Homology}
+
+\subsubsection{Linearized Contact Homology}
+
+\subsubsection{Embedded Contact Homology}
+
+\subsubsection{Symplectic Homology}
+
+\subsubsection{$S^1$-equivariant Symplectic Homology}
+
+\subsubsection{Hamiltonian Floer Homology}
+
+\subsubsection{Lagrangian Floer Homology}
+
+\subsubsection{Rabinowitz--Floer Homology}
+
+\subsubsection{Knot-Contact Homology}
+
+\subsubsection{Instanton--Floer Homology}
+
+\subsubsection{Khovanov Homology}
+
+\subsubsection{Heegard--Floer Homology}
 
 \bibliography{promotion}{}
 \bibliographystyle{plain}
