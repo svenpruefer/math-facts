@@ -309,6 +309,10 @@
   
 \end{thm}
 
+\section{Geometric Analysis}
+
+\subsection{Integration Theorems}
+
 \section{Topology}
 
 \begin{rmk}
@@ -318,7 +322,7 @@
 \section{Algebraic Topology}
 
 \begin{thm}[Alexander Duality]
-  
+  Let $K\subset S^n$ be a compact, locally contractible, nonempty, proper subspace. Then $\wt{H}_i(S^n\setminus K;\ZZ)\simeq \wt{H}^{n-i-1}(K;\ZZ)$ for all $i$.
 \end{thm}
 
 \section{Differential Topology}
@@ -383,6 +387,10 @@
 
 \begin{definition}[Hamiltonian Diffeomorphism]
   A Hamiltonian diffeomorphism $\Psi\in\operatorname{Ham}(M,\omega)$ of a symplectic manifold is a time-one map of a time-dependent Hamiltonian flow.
+\end{definition}
+
+\begin{definition}[Various Equivalences of Symplectic Structures]
+  
 \end{definition}
 
 \subsection{Examples}
@@ -548,7 +556,7 @@ A \emph{Weinstein manifold} is a tuple $(V,\omega,X,\phi)$, where $(V,\omega)$ i
   
 \end{definition}
 
-\subsection{$J$-holomoprhic Curves}
+\subsection{$J$-holomorphic Curves}
 
 \begin{definition}[Properties of $J$-holomorphic Curves]
 A $J$-holomorphic curve $u:\si\lra X$ is called
@@ -630,33 +638,91 @@ A periodic orbit $\gamma:S^1\lra M$ of a flow $\phi_t$ is called
   \end{equation*}
 \end{definition}
 
-\begin{definition}[Bad Orbits]
-  
+\begin{definition}[Objects for Conley--Zehnder Index]
+  \begin{itemize}
+    \item Let $(V\omega)$ be a symplectic vector space and $\operatorname{Sp}(V)$ the symplectic group. Then for $A\in\operatorname{Sp}(V)$ the graph $\Gamma_A\subset (V\oplus V,\omega\oplus -\omega)$ is Lagrangian, in particular the diagonal $\Delta=\Gamma_{\id}$ is Lagrangian.
+    \item Let $\lambda:[0,1]\lra\Lambda$ be a smooth path of Lagrangian subspaces in $(\RR^{2n},\omega_{\text{std}})$ and $L\in\Lambda$. Define the crossing form $\Gamma(\lambda,L,t):=Q^{\dot{\lambda}(t)}|_{\lambda(t)\cap L}$ which is a quadratic form on the vector space $\lambda(t)\cap L$.
+    \item $t\in\lambda^{-1}(\bigcup_{k=1}^n\Lambda_L^k)$ is called a \emph{regular crossing} if and only if $\Gamma(\lambda,L,t)$ is nonsingular.
+    \item If $\lambda:[0,1]\lra\Lambda$ has only regular crossings define
+      \begin{equation*}
+        \mu_L(\lambda):=\frac{1}{2}\operatorname{sign} \Gamma(\lambda,L,0)+\sum_{0<t<1}\operatorname{sign}\Gamma(\lambda,L,t)+\frac{1}{2}\operatorname{sign}\Gamma(\lambda,L,1)\in\frac{1}{2}\ZZ.
+      \end{equation*}
+    \item $\Psi:[0,1]\lra\operatorname{Sp}(V)$ is called \emph{nondegenerate} if and only if $\det(\Psi(1)-\id)\neq 0$.
+    \item Let $L_0\in\Lambda$ be a Lagrangian. Then $\Lambda_{L_0}^k:=\{L\in\Lambda:\dim(L\cap L_0)=k\}$ is a codimension $\frac{k(k+1)}{2}$ submanifold of $\Lambda$.
+    \item Let $L_1\in\Lambda^0_{L_2}$. Then there exists a map $\Lambda_{L_2}^0\lra S^2(L_1)$ given by $L\longmapsto Q_L^{L_1,L_2}$ defined by $Q_L^{L_1,L_2}(v):=\omega(v,w_v)$ where for $L\in\Lambda^0_{L_2}$ and $v\in L_1, w_v\in L_2$ is the unique vector such that $v+w_v\in L$. This gives a vector space isomorphism $\ts_{L_0}\Lambda\lra S^2(L_0)$ by mapping $L\longmapsto Q_L^{L_0,L_1}$ which is in fact independent of $L_1$. Also the coorientation of $\Lambda^1\in\Lambda$ is well-defined. Therefore for $L\in\Lambda$ and $\widehat{L}\in\ts_L\Lambda$ we obtain $Q^{\widehat{L}}\in S^2(L)$ which is well-defined.
+  \end{itemize}
 \end{definition}
 
 \begin{definition}[Conley--Zehnder Index]
-  
+  Let $\Psi:[0,1]\lra\operatorname{Sp}(V)$ be a smooth nondegenerate path of symplectic transformations such that $\Psi(0)=\id$. Then
+  \begin{equation*}
+    \mu_{\text{CZ}}(\Psi):=\mu_{\Delta}(\Gamma_{\Psi}).
+  \end{equation*}
 \end{definition}
 
 \begin{prop}[Properties of Conley--Zehnder Index]
-  
+  The Conley--Zehnder Index for paths of Lagrangians $\lambda_i:[0,1]\lra\Lambda$ satisfies
+  \begin{itemize}
+    \item[Invariance:] $\lambda_0$ and $\lambda_1$ homotopic with fixed endpoints $\Longrightarrow$ $\mu_L(\lambda_0)=\mu_L(\lambda_1)$
+    \item[Concatenation:] $\lambda_0(1)=\lambda_1(0) \Longrightarrow \mu_L(\lambda_0\#\lambda_1)=\mu_L(\lambda_0)+\mu_L(\lambda_1)$
+    \item[Loop:] $\lambda(0)=\lambda(1)\Longrightarrow \mu_L(\lambda)=\mu(\lambda)$ is the Maslov index.
+  \end{itemize}
 \end{prop}
+
+\begin{definition}[Bad Orbits]
+  Let $(N,\xi)$ be a contact manifold and $\gamma:S^1\lra N$ a simple periodic orbit for $\alpha$ such that $\xi=\ker\alpha$. $\gamma^{2k}$ for $k>0$ is called \emph{bad} if for any (and thus all) $i>0$ $\operatorname{CZ}(\gamma^{2i})$ and $\operatorname{CZ}(\gamma^{2i-1})$ have different parities.
+\end{definition}
+
+\begin{definition}[Asymptotic Operators]
+  
+\end{definition}
 
 \subsection{Contact Geometry}
 
+\begin{definition}[Contactomorphism]
+  Two contact manifolds $(N_1,\xi_1)$ and $(N_2,\xi_2)$ are called \emph{contactomorphic} if there exists a diffeomorphism $f:N_1\lra N_2$ such that $f_*(\xi_1)=\xi_2$ or for contact forms $\alpha_i$ such that $\xi_i=\ker\alpha_i$ there exists a nowhere zero function $\lambda:N_1\lra\RR$ such that $f^*\alpha_2=\lambda\alpha_1$.
+\end{definition}
+
+\begin{definition}[Contact Hamiltonian]
+  Let $(N,\alpha)$ be a contact manifold and $H:N\lra\RR^+$ a smooth function. Then we define the \emph{contact Hamiltonian} $X_H$ of $H$ by
+  \begin{equation*}
+    \alpha(X_H)=H\text{ and }i_{X_H}\dd\alpha=\dd H(R_{\alpha})\alpha-\dd H.
+  \end{equation*}
+\end{definition}
+
 \begin{definition}[Contact Embedding]
-  
+  An embedding $j:(A,\eta)\lra(N,\xi)$ is called a \emph{contact embedding} if the image of $j$ is a contact submanifold, i.e.\ $\ts j(A)\cap\xi|_{j(A)}=\dd j (\eta)$, or for $\alpha$ such that $\xi=\ker \alpha$ we have $\ker j^*\alpha=\eta$.
 \end{definition}
 
 \begin{definition}[Symplectic and Stein Fillings]
   
 \end{definition}
 
+\begin{definition}[Contact Isotopy]
+  Denote by $\operatorname{Cont}_0(N,\xi)$ the space of all contactomorphisms of $(N,\xi)$ which are contact isotopic to the identity, i.e.\ $\psi\in\operatorname{Cont}_0(N,\xi)$ if and only if $\exists \psi_t:N\lra N:\psi_t^*\alpha=\lambda_t\alpha$ for some smooth family of functions $\lambda_t:N\lra\RR^+$ and a contact form $\alpha$ such that $\xi=\ker\alpha$ and such that $\psi_0=\id$ and $\psi_1=\psi$.
+\end{definition}
+
+\begin{definition}[Translated Points]
+  Let $\phi\in\operatorname{Cont}_0(N,\xi)$ be a contactomorphism contact isotopic to the identity and $\alpha$ a contact form such that $\xi=\ker\alpha$. A point $x\in N$ is called a \emph{translated point of $\phi$ with respect to $\alpha$} if there exists $t\in\RR$ such that $\phi(x)=\phi_{R_{\alpha}}^t(x)$ and $(\phi^*\alpha)_x=\alpha_x$.
+\end{definition}
+
+\begin{definition}[Hofer Energy of $J$-holomorphic Cylinders in the Symplectization]
+  Consider the symplectization $(\RR\times N,\dd (e^t\lambda))$ of a contact manifold $(N,\xi=\ker\lambda)$. Then define $\si:=\{\phi\in\cin(\RR,[\frac{1}{2},1])\mid\phi'\geq 0\}$. Now define the \emph{Hofer energy} of a map $u:\CC\lra \RR\times N$ by
+  \begin{equation*}
+    E_{\si}(u):=\sup_{\phi\in\si}\int_{\CC}u^*\dd(\phi\lambda).
+  \end{equation*}
+\end{definition}
+
 \subsection{Theorems}
 
 \begin{thm}[Floer--McDuff--Eliashberg]
-  
+  Let $(Z,\omega)$ be an asymptotically flat symplectic manifold, i.e.\ outside of a compact subset it is symplectomorphic to a neighborhood of infinity in $(\RR^{2n},\omega_{\text{std}})$ and such that $H_2(Z,\RR)=0$. Then $Z$ is diffeomorphic to $\RR^{2n}$.
+\label{thm:fme}
 \end{thm}
+
+\begin{rmk}
+  The diffeomorphism from Theorem~\ref{thm:fme} does not need to extend the given symplectomorphism.
+\end{rmk}
 
 \subsection{Homology Theories}
 
